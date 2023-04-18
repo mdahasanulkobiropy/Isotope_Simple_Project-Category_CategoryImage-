@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* Please ❤ this if you like it! 😊 */
+/* Google Font Link */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap");
+/* Reset CSS Style */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-family: "Work Sans", sans-serif;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Portfolio Section Style */
+.portfolio {
+  padding: 3rem 0 1.5rem;
+}
+.portfolio__title {
+  font-size: 3rem;
+  line-height: 1;
+}
+.portfolio__nav__btn {
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding: 0.4rem 1rem;
+}
+.portfolio__nav__btn::before, .portfolio__nav__btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  width: 100%;
+  height: 2px;
+  background-color: #d9d9d9;
+  transition: transform ease-in-out 0.3s;
+}
+.portfolio__nav__btn::before {
+  top: 0;
+  transform-origin: left center;
+}
+.portfolio__nav__btn::after {
+  bottom: 0;
+  transform-origin: right center;
+}
+.portfolio__nav__btn.active::before, .portfolio__nav__btn.active::after, .portfolio__nav__btn:hover::before, .portfolio__nav__btn:hover::after, .portfolio__nav__btn:focus::before, .portfolio__nav__btn:focus::after {
+  transform: scaleX(1);
+}
+.portfolio__nav__btn.active::before, .portfolio__nav__btn:hover::before, .portfolio__nav__btn:focus::before {
+  transform-origin: right center;
+}
+.portfolio__nav__btn.active::after, .portfolio__nav__btn:hover::after, .portfolio__nav__btn:focus::after {
+  transform-origin: left center;
+}
+.portfolio__card {
+  margin-bottom: 1.5rem;
+}
+.portfolio__card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  opacity: 0;
+  transition: opacity linear 0.3s;
+}
+.portfolio__card:hover::after, .portfolio__card:focus::after {
+  opacity: 1;
+}
